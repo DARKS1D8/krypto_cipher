@@ -191,7 +191,7 @@ if __name__ == "__main__":
     encdec = int(input('зашифровать - 1, рашсшифровать = 2' + '\n'))
     if encdec == 1:
         file_text = input('путь к файлу с текстом: ')
-        file_res = input('путь к файлу для записи зашифроваанного сообщения: ')
+        file_res = input('путь к файлу для записи зашифрованного сообщения: ')
         # Генерация ключей
         rsa_private_key, rsa_public_key = generate_rsa_keys()
 
