@@ -1,14 +1,16 @@
-from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-from cryptography.hazmat.primitives.asymmetric import rsa, padding
-from cryptography.hazmat.primitives import hashes, serialization
-from cryptography.hazmat.backends import default_backend
-from cryptography.hazmat.primitives.serialization import load_pem_private_key
-import os
-import hashlib
 import base64
-import brotli
+import hashlib
+import os
 import time
+import keyboard
+import brotli
 import psutil
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import hashes, serialization
+from cryptography.hazmat.primitives.asymmetric import rsa, padding
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+from cryptography.hazmat.primitives.serialization import load_pem_private_key
+
 
 # Функция для добавления padding'а
 def pad(data, block_size=16):
@@ -248,3 +250,5 @@ if __name__ == "__main__":
     print(f"Время выполнения: {end_time - start_time} секунд")
     process = psutil.Process()
     print(f"Используемая память: {process.memory_info().rss / 2**20} Мбайт")
+    print('Для завершения нажмите любую клавишу...')
+    keyboard.read_key()
